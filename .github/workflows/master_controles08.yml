@@ -28,12 +28,6 @@ jobs:
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
-      - name: dotnet install ef
-        run: dotnet tool install -g dotnet-ef
-
-      - name: dotnet bundle migration
-        run: dotnet ef migrations bundle --runtime linux-x64 -p Controles08/Controles08.csproj -o ${{env.DOTNET_ROOT}}/myapp/migrate
-      
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
@@ -59,5 +53,5 @@ jobs:
         with:
           app-name: 'Controles08'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_534AAF3A771447EFAD29997D7030EC35 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5FCD978825AA4536BBC1F8BA637B5821 }}
           package: .
