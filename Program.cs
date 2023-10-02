@@ -7,11 +7,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<Controles08Context>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("AZURE_SQL_CONNECTIONSTRING") ?? throw new InvalidOperationException("Connection string 'Controles08Context' not found.")));
-builder.Services.AddStackExchangeRedisCache(options =>
-    {
-    options.Configuration = builder.Configuration["AZURE_REDIS_CONNECTIONSTRING"];
-    options.InstanceName = "SampleInstance";
-    });
+//builder.Services.AddStackExchangeRedisCache(options =>
+//    {
+//    options.Configuration = builder.Configuration["AZURE_REDIS_CONNECTIONSTRING"];
+//    options.InstanceName = "SampleInstance";
+//    });
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
