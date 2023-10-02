@@ -15,6 +15,11 @@
       "Name": "mssql2.subscriptionId",
       "Type": "subscription",
       "Value": "cb69a945-840d-42d3-aa35-5dd62081bdcf"
+    },
+    "mssql2.resourceGroupLocation": {
+      "Name": "mssql2.resourceGroupLocation",
+      "Type": "location",
+      "Value": "centralus"
     }
   }
 }
